@@ -82,7 +82,7 @@ class ProjectAgent:
 
     def load(self):
         device = torch.device('cpu')
-        self.model.load_state_dict(torch.load("rl-class-assignment-melvinsevi-main/src/model_best.pth", map_location=device))
+        self.model.load_state_dict(torch.load("src/model_best.pth", map_location=device))
         self.model.eval()
     
 
