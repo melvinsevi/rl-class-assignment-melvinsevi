@@ -25,10 +25,14 @@ def evaluate_agent(agent: Agent, env: gym.Env, nb_episode: int = 10) -> float:
         done = False
         truncated = False
         episode_reward = 0
+        count = 0
         while not done and not truncated:
+            count = count + 1
+            #print(count)
             action = agent.act(obs)
             obs, reward, done, truncated, _ = env.step(action)
             episode_reward += reward
+            #print(episode_reward)
         rewards.append(episode_reward)
     return mean(rewards)
 
